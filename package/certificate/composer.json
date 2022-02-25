@@ -1,0 +1,16 @@
+{
+    "name": "omidzahed/certificate",
+
+    "autoload": {
+        "psr-4": {
+            "Omidzahed\\Certificate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "omid-zahed",
+            "email": "omid98.ir@gmail.com"
+        }
+    ]
+
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+
+    @font-face {
+        font-family: "IranNastaliq";
+        src: url("{{assets}}/font/IranNastaliq.ttf");
+    }
+    @font-face {
+        font-family: "NAZANIN";
+        src: url("{{assets}}/font/B-NAZANIN.TTF");
+    }
+    @font-face {
+        font-family: "AgencyFBBold";
+        src: url("{{assets}}/font/AgencyFBBold.ttf");
+    }
+    @font-face {
+        font-family: "TITR";
+        src: url("{{assets}}/font/TITR.ttf");
+    }
+    body{
+        color: #5d3e39;
+
+        font-family: "TITR",serif !important;
+        background: url("{{assets}}/background.jpg");
+        background-repeat: no-repeat;
+        height: 920px;
+        background-size: cover;
+        position: relative;
+    }
+    .user_image{
+        border-radius: 5px;
+        width: 150px;
+        position: absolute;
+        left: 185px;
+        top: 135px;
+        height: 185px;
+    }
+
+    .QR{
+        border-radius: 5px;
+        width: 135px;
+        position: absolute;
+        right: 105px;
+        top: 125px;
+
+    }
+    .user_name{
+        position: absolute;
+        right: 220px;
+        top: 385px;
+        font-size: 25px;
+    }
+    .user_en_name{
+        font-family: "AgencyFBBold",serif !important;
+        position: absolute;
+        left: 129px;
+        top: 417px;
+        font-size: 25px;
+    }
+    .user_code{
+        position: absolute;
+        right: 158px;
+        top: 460px;
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+    .user_city{
+        position: absolute;
+        right: 458px;
+        top: 453px;
+        font-size: 20px;
+
+    }
+    .user_birthday{
+        position: absolute;
+        right: 588px;
+        top: 453px;
+        font-size:20px;
+    }
+    .course_en_name{
+        font-family: "AgencyFBBold",serif !important;
+        position: absolute;
+        left: 114px;
+        top: 580px;
+
+        width: 100%;
+        max-width: 700px;
+        direction: ltr;
+        font-size: 23px;
+    }
+    .course_name{
+        position: absolute;
+        right: 152px;
+        top: 515px;
+
+        width: 100%;
+        max-width: 700px;
+        direction: rtl;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .course_time{
+        position: absolute;
+        right: 152px;
+        top: 583px;
+        direction: rtl;
+        font-size: 19px;
+    }
+    .signature{
+        bottom: 70px;
+        position: absolute;
+        right: 310px;
+        width: 260px;
+    }
+    .date_persian{
+        position: absolute;
+        right: 140px;
+        top: 292px;
+        direction: rtl;
+        font-size: 18px;
+    }
+    .date{
+        font-family: "AgencyFBBold",serif !important;
+        position: absolute;
+        left: 150px;
+        top: 685px;
+        direction: ltr;
+        font-size: 22px;
+
+    }
+    .course_time_en{
+        font-family: "AgencyFBBold",serif !important;
+        position: absolute;
+        left: 190px;
+        top: 625px;
+        direction: ltr;
+        font-size: 22px;
+    }
+</style>
+<body>
+
+<div class="date_persian">{{fa_date}}</div>
+<div class="date">{{en_date}}</div>
+
+<img class="user_image" src="{{user_image_path}}" />
+<img class="QR" src="{qr}" />
+<div class="user_name">
+    {{user_fa_name}}
+</div>
+<div class="user_en_name">
+    {{user_en_name}}
+</div>
+
+<div class="user_code">
+    {{NationalCodeUser}}
+</div>
+
+<div class="user_city">
+    {{city_user}}
+</div>
+
+<div class="user_birthday">
+    {{br_date}}
+</div>
+
+
+<div class="course_name">
+    {{course_name}}
+</div>
+<div class="course_en_name">
+    {{course_en_name}}
+</div>
+
+<div class="course_time"> {{course_fa_time}}</div>
+<div class="course_time_en">{{course_en_time}} </div>
+
+
+<img class="signature" src="{{assets}}/image/signature.png" />
+
+
+</body>
+</html>

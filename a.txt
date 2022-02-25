@@ -1,0 +1,46 @@
++--------+----------+-------------------------------+--------------------------+------------------------------------------------------------------------+----------------------------------------------+
+| Domain | Method   | URI                           | Name                     | Action                                                                 | Middleware                                   |
++--------+----------+-------------------------------+--------------------------+------------------------------------------------------------------------+----------------------------------------------+
+|        | GET|HEAD | /                             |                          | Closure                                                                | web                                          |
+|        | GET|HEAD | _debugbar/assets/javascript   | debugbar.assets.js       | Barryvdh\Debugbar\Controllers\AssetController@js                       | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        |          |                               |                          |                                                                        | Closure                                      |
+|        | GET|HEAD | _debugbar/assets/stylesheets  | debugbar.assets.css      | Barryvdh\Debugbar\Controllers\AssetController@css                      | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        |          |                               |                          |                                                                        | Closure                                      |
+|        | DELETE   | _debugbar/cache/{key}/{tags?} | debugbar.cache.delete    | Barryvdh\Debugbar\Controllers\CacheController@delete                   | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        |          |                               |                          |                                                                        | Closure                                      |
+|        | GET|HEAD | _debugbar/clockwork/{id}      | debugbar.clockwork       | Barryvdh\Debugbar\Controllers\OpenHandlerController@clockwork          | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        |          |                               |                          |                                                                        | Closure                                      |
+|        | GET|HEAD | _debugbar/open                | debugbar.openhandler     | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle             | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        |          |                               |                          |                                                                        | Closure                                      |
+|        | GET|HEAD | api/test                      |                          | Closure                                                                | api                                          |
+|        | GET|HEAD | api/user                      |                          | Closure                                                                | api                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\Authenticate:sanctum     |
+|        | GET|HEAD | dashboard/course              | dashboard.course.all     | App\Http\Controllers\dashboard\course\CourseController@index           | web                                          |
+|        | GET|HEAD | dashboard/profile             | dashboard.profile        | App\Http\Controllers\dashboard\ProfileController@index                 | web                                          |
+|        | GET|HEAD | dashboard/reports             | dashboard.reports.course | App\Http\Controllers\dashboard\reports\ReportsCourseController@index   | web                                          |
+|        | GET|HEAD | dashboard/students            | dashboard.students.all   | App\Http\Controllers\dashboard\students\StudentsController@index       | web                                          |
+|        | GET|HEAD | home                          | home                     | App\Http\Controllers\HomeController@index                              | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\Authenticate             |
+|        | GET|HEAD | login                         | login                    | App\Http\Controllers\Auth\LoginController@showLoginForm                | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\RedirectIfAuthenticated  |
+|        | POST     | login                         |                          | App\Http\Controllers\Auth\LoginController@login                        | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\RedirectIfAuthenticated  |
+|        | POST     | logout                        | logout                   | App\Http\Controllers\Auth\LoginController@logout                       | web                                          |
+|        | GET|HEAD | password/confirm              | password.confirm         | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\Authenticate             |
+|        | POST     | password/confirm              |                          | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\Authenticate             |
+|        | POST     | password/email                | password.email           | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web                                          |
+|        | GET|HEAD | password/reset                | password.request         | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web                                          |
+|        | POST     | password/reset                | password.update          | App\Http\Controllers\Auth\ResetPasswordController@reset                | web                                          |
+|        | GET|HEAD | password/reset/{token}        | password.reset           | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web                                          |
+|        | GET|HEAD | register                      | register                 | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\RedirectIfAuthenticated  |
+|        | POST     | register                      |                          | App\Http\Controllers\Auth\RegisterController@register                  | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\RedirectIfAuthenticated  |
+|        | POST     | requests/makeCertificate      | requests.makeCertificate | App\Http\Controllers\Moodle\MoodleController@makeCertificate           | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\CheckToken               |
+|        | POST     | requests/payment              | requests.payment         | App\Http\Controllers\Moodle\MoodleController@create                    | web                                          |
+|        |          |                               |                          |                                                                        | App\Http\Middleware\CheckToken               |
+|        | GET|HEAD | sanctum/csrf-cookie           |                          | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show             | web                                          |
++--------+----------+-------------------------------+--------------------------+------------------------------------------------------------------------+----------------------------------------------+
